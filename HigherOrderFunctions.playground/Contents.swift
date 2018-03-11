@@ -15,7 +15,7 @@ func count(house:[String]) -> [Int]
     }
     return countArray
 }
-
+/// jhfutjhgyg
 let houseCount = count(house: houseName)
 print(houseCount)
 
