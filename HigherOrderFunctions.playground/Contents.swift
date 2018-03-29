@@ -1,5 +1,14 @@
 import Foundation
 
+/*:
+## Higher Order Functions
+* map(_:)
+* flatmap(_:)
+* filter(_:)
+* sorted(_:)
+* Reduce
+*/
+
 //: #### Using map()
 //: ## map is a function type used with emulator objects like array,dictionary,sets. It can apply function to every individual object in a emulatable object
 
@@ -15,7 +24,6 @@ func count(house:[String]) -> [Int]
     }
     return countArray
 }
-
 let houseCount = count(house: houseName)
 print(houseCount)
 
@@ -89,6 +97,8 @@ let name:[String] = ["jon snow" , "Arya Stark" , "Jamie Lanniester" , "Sansa Sta
 let starkFamily = name.filter{$0.hasSuffix("Stark")}
 print(starkFamily)
 
+let arrayWith_min_10_char = name.filter{ $0.count > 10}
+print(arrayWith_min_10_char)
 //: ### Using sorted()
 //: ## sorted is used to rearrange the elements in the Array
 
@@ -128,6 +138,9 @@ print(stringOfNumbers)
 let nameArrayCharactersCount = name.reduce(0, {$0 + $1.count})
 print(nameArrayCharactersCount)
 
+//: all names into one string
+let nameString = name.reduce("", {$0 + $1.replacingOccurrences(of: " ", with: "")})
+print("type of name :- \(type(of: name)) , type of nameString :-  \(type(of: nameString))")
 //: Find Longest Name
 let longestname = name.reduce("", {$0.count > $1.count ? $0 : $1 } )
 print(longestname)
