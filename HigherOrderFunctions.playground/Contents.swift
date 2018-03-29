@@ -15,24 +15,24 @@ import Foundation
 let houseName:[String] = ["starks" ,"lanniesters" , "targaryens" ,"baratheon" , "arryn"]
 
 //: lets say now we need to count the number of texts in each element and we need that result in corresponding array
-func count(house:[String]) -> [Int]
+func characterCount(house:[String]) -> [Int]
 {
-    var countArray = [Int]()
+    var characterCountArray = [Int]()
     for item  in house
     {
-        countArray.append(item.count)
+        characterCountArray.append(item.count)
     }
-    return countArray
+    return characterCountArray
 }
-let houseCount = count(house: houseName)
-print(houseCount)
+let houseCharacterCount = characterCount(house: houseName)
+print(" Characters count of each element in house name :- \(houseCharacterCount)")
 
 //: In above you are writing your function where the array is passed and then items are counted
 //: But in case of map every thing can be done in single line
 let mappedHouseCount = houseName.map{$0.count}
 print(mappedHouseCount)
 
-let check = houseCount == mappedHouseCount //: you are getting similar result just with single line of code
+let check = houseCharacterCount == mappedHouseCount //: you are getting similar result just with single line of code
 print(check)
 
 //: Map Can be used to any function lets say we need all upper case letters
@@ -97,8 +97,10 @@ let name:[String] = ["jon snow" , "Arya Stark" , "Jamie Lanniester" , "Sansa Sta
 let starkFamily = name.filter{$0.hasSuffix("Stark")}
 print(starkFamily)
 
+//: Filter names with more than 10 characters
 let arrayWith_min_10_char = name.filter{ $0.count > 10}
 print(arrayWith_min_10_char)
+
 //: ### Using sorted()
 //: ## sorted is used to rearrange the elements in the Array
 
