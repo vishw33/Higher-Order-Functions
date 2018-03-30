@@ -72,18 +72,18 @@ let printValue = place.map{$0}
 print(printValue)
 
 //: the printed values have optionals among it where this can be avoided using flatmap
-let flatMapValue = place.flatMap{$0}
+let flatMapValue = place.compactMap{$0}
 print(flatMapValue)  // here the optionals are removed
 
 //: flat map is also used to filter out the nil value
 let arrayWithNil:[String?] = ["eleven" , nil , "demogorgon" , nil , "max" , nil , "lucus" , nil , "dustin"]
-let filterNilArray = arrayWithNil.flatMap{$0}
+let filterNilArray = arrayWithNil.compactMap{$0}
 print(filterNilArray)
 print ("Array with nil = \(arrayWithNil.count) and with out nil count = \(filterNilArray.count)")
 
 //: flatmap will come in handy when you need check on nil or working on optional type like below
 let gradeArray:[String] = ["45" , "60" , "75" , "something random error" , "15" , "Another Error"]
-let gradeActualArray:[Int] = gradeArray.flatMap{Int($0)}
+let gradeActualArray:[Int] = gradeArray.compactMap{Int($0)}
 print(gradeActualArray)
 
 //: ### Using filter()
