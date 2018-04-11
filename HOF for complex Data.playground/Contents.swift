@@ -110,4 +110,4 @@ print(searchedEmployee)
 let ageOrdered_ = employeeArrayWithComparableProtocal.sorted { (a, b) -> Bool in
     return Employee2.age(lhs: a, rhs: b)
 }
-ageOrdered_.flatMap{print("age: \($0.age), salary: \($0.salary)")}
+ageOrdered_.compactMap{print("age: \($0.age), salary: \($0.salary)")}
