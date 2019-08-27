@@ -145,3 +145,6 @@ print("type of name :- \(type(of: name)) , type of nameString :-  \(type(of: nam
 //: Find Longest Name
 let longestname = name.reduce("", {$0.count > $1.count ? $0 : $1 } )
 print(longestname)
+
+let shortName = name.reduce("", {$0.count < $1.count ? $0 : $1})
+print(shortName)
